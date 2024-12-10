@@ -1,6 +1,6 @@
 
-----identity ka use hum kise column ko sequence wise value dene ke liye karte h jaise agar hum chahte h ID ki indexing 1 se shuru ho aur apne app 
-----badhti chali jaye jabtak ham data ko insert kare----
+----Identity---- an IDENTITY property is used to automatically generate unique values for a column, typically for primary key columns.
+----This is especially useful for generating auto-incrementing values without having to manually insert them.-------
 ----identity-----Autoincrement
 ----Identity(seed,increment)
 
@@ -26,11 +26,14 @@ insert into tblIdentity values('rudra')
 
 delete from tblIdentity
 
- -----truncate---- indexing ko reset kar deta h mtlb 1 se shuru kar deta h
+ -----truncate----  the TRUNCATE command is used to delete all rows from a table quickly and efficiently.---
+ -----TRUNCATE is generally faster for large tables.-------
+ 
 truncate table tblIdentity    
 
----identity Reseed----ki help se hum identity column ko kisi bhi no se start kar sakte h jaise agar hame indexing karni h 100 se to hum identity 
-----------------------reseed ka istemal karenge
+---identity Reseed----The IDENTITY column is an auto-incrementing value, and sometimes you may want to reseed (or reset) it.
+---For example, if you delete all rows from a table and want the next inserted row to start with a specific value, 
+ --you would use the DBCC CHECKIDENT command to reseed the identity value.---
 
 DBCC CHECKIDENT ('tblidentity',RESEED,100)
 
